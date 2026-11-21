@@ -1,105 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>First Gen Studios | Indie Games</title>
-<meta name="description" content="First Gen Studios is an independent game studio in Belmont, North Carolina. Makers of Galaxy Strike.">
-<style>
-  :root { --bg:#07071a; --panel:#11113a; --cyan:#3ef2ff; --pink:#ff3e9e; --text:#e8e8ff; --muted:#9a9ac8; }
-  * { box-sizing:border-box; margin:0; padding:0; }
-  body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; background:var(--bg); color:var(--text); line-height:1.6;
-         background-image: radial-gradient(1px 1px at 20% 30%, #fff8, transparent), radial-gradient(1px 1px at 70% 80%, #fff6, transparent),
-         radial-gradient(1.5px 1.5px at 50% 10%, #fff9, transparent), radial-gradient(1px 1px at 85% 40%, #fff5, transparent),
-         radial-gradient(1px 1px at 10% 85%, #fff7, transparent); background-attachment: fixed; }
-  a { color:var(--cyan); }
-  header { padding:20px 24px; display:flex; justify-content:space-between; align-items:center; max-width:1000px; margin:0 auto; }
-  .logo { font-weight:900; letter-spacing:2px; font-size:1.25rem; }
-  .logo span { color:var(--pink); }
-  nav a { margin-left:20px; text-decoration:none; color:var(--text); font-size:.95rem; }
-  nav a:hover { color:var(--cyan); }
-  .hero { text-align:center; padding:90px 24px 70px; max-width:800px; margin:0 auto; }
-  .hero h1 { font-size:clamp(2.2rem, 6vw, 3.8rem); line-height:1.1; margin-bottom:18px;
-             background:linear-gradient(90deg,var(--cyan),var(--pink)); -webkit-background-clip:text; background-clip:text; color:transparent; }
-  .hero p { color:var(--muted); font-size:1.15rem; }
-  section { max-width:1000px; margin:0 auto; padding:50px 24px; }
-  h2 { font-size:1.8rem; margin-bottom:20px; }
-  .card { background:var(--panel); border:1px solid #2a2a6a; border-radius:16px; padding:32px; display:grid; gap:28px; grid-template-columns:1fr; }
-  @media (min-width:760px) { .card { grid-template-columns: 1fr 1.3fr; align-items:center; } }
-  .game-art { aspect-ratio: 9/16; max-height:420px; margin:0 auto; width:100%; max-width:240px; border-radius:14px;
-              background: linear-gradient(180deg,#0b0b2e,#1b0b3a); border:2px solid var(--cyan); position:relative; overflow:hidden;
-              box-shadow:0 0 40px #3ef2ff33; }
-  .ship { position:absolute; bottom:14%; left:50%; transform:translateX(-50%); width:0; height:0;
-          border-left:22px solid transparent; border-right:22px solid transparent; border-bottom:44px solid var(--cyan);
-          filter: drop-shadow(0 0 10px var(--cyan)); }
-  .enemy { position:absolute; width:26px; height:18px; background:var(--pink); border-radius:4px 4px 12px 12px; filter:drop-shadow(0 0 8px var(--pink)); }
-  .shot { position:absolute; width:3px; height:16px; background:#fff; left:50%; border-radius:2px; box-shadow:0 0 8px #fff; }
-  .tag { display:inline-block; font-size:.8rem; color:var(--bg); background:var(--cyan); padding:3px 10px; border-radius:20px; font-weight:700; margin-bottom:12px; }
-  ul.features { margin:16px 0 0 20px; color:var(--muted); }
-  .contact p { margin-bottom:8px; }
-  footer { text-align:center; color:var(--muted); font-size:.85rem; padding:40px 24px; border-top:1px solid #1d1d4a; margin-top:40px; }
-  footer a { margin:0 8px; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>First Gen Studios</title>
+  <meta name="description" content="First Gen Studios — Generation X roots. Next-gen games.">
+  <meta property="og:title" content="First Gen Studios">
+  <meta property="og:description" content="Generation X roots. Next-gen games.">
+  <meta property="og:image" content="https://firstgengames.com/logo.jpg">
+  <link rel="icon" href="logo.jpg">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      background: radial-gradient(ellipse at center, #0a1e4a 0%, #030817 60%, #000 100%);
+      color: #cfd8ea;
+      font-family: Arial, Helvetica, sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+    main img {
+      display: block;
+      width: 100%;
+      max-width: 1536px;
+      max-height: calc(100vh - 80px);
+      object-fit: contain;
+      border-radius: 6px;
+      box-shadow: 0 0 60px rgba(40, 110, 255, 0.35);
+    }
+    footer {
+      text-align: center;
+      padding: 14px 16px 20px;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+    }
+    footer a { color: #f2c14e; text-decoration: none; margin: 0 10px; }
+    footer a:hover { text-decoration: underline; }
+  </style>
 </head>
 <body>
-<header>
-  <div class="logo">FIRST GEN <span>STUDIOS</span></div>
-  <nav>
-    <a href="#games">Games</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-    <a href="privacy.html">Privacy</a>
-  </nav>
-</header>
-
-<div class="hero">
-  <h1>Arcade games with heart.</h1>
-  <p>First Gen Studios is an independent game studio from Belmont, North Carolina, making fast, fun mobile games anyone can pick up and play.</p>
-</div>
-
-<section id="games">
-  <h2>Our Games</h2>
-  <div class="card">
-    <div class="game-art" aria-hidden="true">
-      <div class="enemy" style="top:14%;left:20%"></div>
-      <div class="enemy" style="top:14%;left:45%"></div>
-      <div class="enemy" style="top:14%;left:70%"></div>
-      <div class="enemy" style="top:26%;left:32%"></div>
-      <div class="enemy" style="top:26%;left:58%"></div>
-      <div class="shot" style="bottom:35%"></div>
-      <div class="shot" style="bottom:50%"></div>
-      <div class="ship"></div>
-    </div>
-    <div>
-      <span class="tag">COMING SOON TO GOOGLE PLAY</span>
-      <h3 style="font-size:1.6rem;margin-bottom:10px">Galaxy Strike</h3>
-      <p>A classic arcade space shooter rebuilt for your phone. Pilot your ship through endless waves of enemy fighters, grab power-ups, survive the onslaught, and chase the high score.</p>
-      <ul class="features">
-        <li>Endless waves that keep getting tougher</li>
-        <li>Power-ups, shockwaves and big explosions</li>
-        <li>Retro arcade look with modern effects</li>
-        <li>Simple touch controls</li>
-        <li>Free to play, no account needed</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section id="about">
-  <h2>About Us</h2>
-  <p>First Gen Studios is a family-run studio and a division of Helping Hands Senior Errand Service LLC, based in Belmont, North Carolina. We believe great games don't need huge budgets, just good ideas, tight controls, and a lot of care.</p>
-</section>
-
-<section id="contact" class="contact">
-  <h2>Contact</h2>
-  <p>Questions, feedback, or support for any of our games:</p>
-  <p><strong>Email:</strong> <a href="mailto:info@firstgengames.com">info@firstgengames.com</a></p>
-  <p><strong>Mail:</strong> First Gen Studios, Helping Hands Senior Errand Service LLC, Belmont, NC 28012</p>
-</section>
-
-<footer>
-  <p>&copy; 2026 First Gen Studios, a DBA of Helping Hands Senior Errand Service LLC. All rights reserved.</p>
-  <p style="margin-top:8px"><a href="privacy.html">Privacy Policy</a> <a href="mailto:info@firstgengames.com">Support</a></p>
-</footer>
+  <main>
+    <img src="logo.jpg" alt="First Gen Studios — Generation X roots. Next-gen games.">
+  </main>
+  <footer>
+    <a href="privacy.html">Privacy Policy</a> |
+    <a href="mailto:info@firstgengames.com">info@firstgengames.com</a>
+    <div style="margin-top:8px;opacity:.6">&copy; 2026 First Gen Studios</div>
+  </footer>
 </body>
 </html>
