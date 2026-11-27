@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>First Gen Studios | Generation X Roots. Next-Gen Games.</title>
-<meta name="description" content="First Gen Studios is an independent game studio in Belmont, North Carolina. Makers of Galaxy Strike, coming soon to Google Play.">
+<meta name="description" content="First Gen Studios is an independent game studio in Belmont, North Carolina. Makers of Galaxy Strike 3D, Spades and Latchkey for Android phones.">
 <meta property="og:title" content="First Gen Studios">
-<meta property="og:description" content="Generation X roots. Next-gen games. Galaxy Strike is coming soon to Google Play.">
+<meta property="og:description" content="Generation X roots. Next-gen games. Galaxy Strike 3D is coming soon to Google Play.">
 <meta property="og:image" content="https://firstgengames.com/logo.jpg">
 <link rel="icon" href="logo.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -155,6 +155,33 @@
     .card { padding:24px; }
   }
   @media (prefers-reduced-motion: reduce) { * { animation:none !important; } }
+
+  /* ---------- extra game cards ---------- */
+  .card + .card { margin-top:32px; }
+  .game-art.art-spades { background:radial-gradient(ellipse at 50% 45%, #1f8a4c 0%, #0f5a31 60%, #08351d 100%); }
+  .art-spades .table-ring { position:absolute; inset:7% 8%; border-radius:50%; border:3px solid rgba(245,185,66,.55); box-shadow:inset 0 0 30px rgba(0,0,0,.45); }
+  .art-spades .table-x { position:absolute; top:14%; left:0; right:0; text-align:center; font-family:Orbitron,sans-serif; font-weight:900; font-size:3.2rem; color:rgba(245,185,66,.18); }
+  .art-spades .pc { position:absolute; width:34%; aspect-ratio:5/7; left:33%; top:44%; background:#fff; border-radius:8px; box-shadow:0 6px 14px rgba(0,0,0,.5); font-family:Orbitron,sans-serif; font-weight:900; color:#111; display:flex; align-items:center; justify-content:center; font-size:2.2rem; transform-origin:50% 150%; }
+  .art-spades .pc::before { content:attr(data-r); position:absolute; top:5px; left:8px; font-size:.95rem; }
+  .art-spades .pc.red { color:#d0202a; }
+  .art-spades .c1 { transform:rotate(-24deg); } .art-spades .c2 { transform:rotate(-8deg); }
+  .art-spades .c3 { transform:rotate(8deg); }
+  .art-spades .c4 { transform:rotate(24deg); animation:cardlift 2.4s ease-in-out infinite; }
+  @keyframes cardlift { 0%,100% { transform:rotate(24deg) translateY(0); } 50% { transform:rotate(24deg) translateY(-16px); } }
+  .game-art.art-latch { background:repeating-linear-gradient(90deg,#6b4a2f 0 22px,#5a3d26 22px 24px); }
+  .art-latch .rug { position:absolute; left:16%; right:16%; top:30%; height:30%; background:#a8502b; border:4px dashed #e8b85a; border-radius:8px; }
+  .art-latch .clock { position:absolute; top:5%; left:50%; transform:translateX(-50%); background:#111; color:#ff4040; font-family:Orbitron,sans-serif; font-weight:800; padding:3px 10px; border-radius:6px; border:2px solid #444; font-size:1rem; letter-spacing:1px; animation:lkblink 1s steps(1) infinite; }
+  .art-latch .mess { position:absolute; width:13%; aspect-ratio:1; border-radius:4px; box-shadow:0 3px 6px rgba(0,0,0,.4); }
+  .art-latch .m1 { background:#e9e9e9; left:20%; top:36%; transform:rotate(20deg); border-radius:40% 40% 10% 10%; }
+  .art-latch .m2 { background:#3b82f6; left:62%; top:44%; transform:rotate(-15deg); }
+  .art-latch .m3 { background:#facc15; left:24%; top:68%; border-radius:50%; }
+  .art-latch .m4 { background:#ef4444; left:68%; top:78%; transform:rotate(35deg); }
+  .art-latch .kid { position:absolute; width:17%; aspect-ratio:1; border-radius:50%; background:#f2c48d; border:4px solid #3b6fd8; box-shadow:0 0 0 3px #222; animation:scoot 5s ease-in-out infinite; }
+  .art-latch .kid::after { content:""; position:absolute; width:30%; height:30%; border-radius:50%; background:var(--gold); left:35%; bottom:-28%; box-shadow:0 0 6px var(--gold); }
+  .art-latch .door { position:absolute; bottom:0; left:38%; width:24%; height:3%; background:var(--gold); box-shadow:0 0 12px var(--gold); }
+  @keyframes scoot { 0%,100% { left:18%; top:56%; } 33% { left:62%; top:60%; } 66% { left:42%; top:82%; } }
+  @keyframes lkblink { 50% { opacity:.35; } }
+  @media (prefers-reduced-motion:reduce) { .art-spades .c4, .art-latch .kid, .art-latch .clock { animation:none; } }
 </style>
 </head>
 <body>
@@ -162,7 +189,7 @@
 <header class="hero" id="top">
   <img src="logo.jpg" alt="First Gen Studios: Generation X roots. Next-gen games.">
   <div class="hero-cta">
-    <a class="btn btn-gold" href="#games">GALAXY STRIKE: COMING SOON</a>
+    <a class="btn btn-gold" href="#games">GALAXY STRIKE 3D: COMING SOON</a>
     <a class="btn btn-outline" href="#contact">CONTACT US</a>
   </div>
   <a class="scroll-hint" href="#games" aria-label="Scroll down">&#8964;</a>
@@ -200,15 +227,15 @@
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.6 1.8 13.8 12 3.6 22.2c-.4-.2-.6-.6-.6-1.1V2.9c0-.5.2-.9.6-1.1Zm11.6 11.6 2.6 2.6-11.7 6.7 9.1-9.3Zm3.9-3.9 2.8 1.6c.8.5.8 1.3 0 1.8l-2.8 1.6-2.9-2.9 2.9-2.1ZM6.1 1.3l11.7 6.7-2.6 2.6-9.1-9.3Z"/></svg>
         COMING SOON TO GOOGLE PLAY
       </span>
-      <h3>GALAXY STRIKE</h3>
-      <p>A classic arcade space shooter rebuilt for your phone. Pilot your ship through endless waves of enemy fighters, grab power-ups, survive the onslaught, and chase the high score.</p>
+      <h3>GALAXY STRIKE 3D</h3>
+      <p>The arcade space shooter you grew up on, rebuilt in full 3D for your phone. Pilot your ship through endless waves of enemy fighters, grab power-ups, survive the onslaught, and chase the high score.</p>
       <ul class="features">
+        <li>Full 3D ships, enemies and explosions</li>
         <li>Endless waves that keep getting tougher</li>
-        <li>Power-ups, shockwaves and big explosions</li>
-        <li>Retro arcade look with modern effects</li>
-        <li>Simple touch controls</li>
+        <li>Power-ups, shockwaves and boss-sized chaos</li>
+        <li>Earn coins and unlock new ship skins</li>
+        <li>Daily rewards and simple touch controls</li>
         <li>Free to play, no account needed</li>
-        <li>No ads, no tracking</li>
       </ul>
       <span class="gp-soon" aria-label="Coming soon on Google Play">
         <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true">
@@ -219,6 +246,52 @@
         </svg>
         <span><small>Coming soon on</small><strong>Google Play</strong></span>
       </span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="game-art art-spades" aria-hidden="true">
+      <div class="table-ring"></div>
+      <div class="table-x">X</div>
+      <div class="pc c1" data-r="A">♠</div>
+      <div class="pc c2 red" data-r="K">♥</div>
+      <div class="pc c3" data-r="Q">♣</div>
+      <div class="pc c4" data-r="A">♠</div>
+    </div>
+    <div>
+      <span class="badge">IN DEVELOPMENT</span>
+      <h3>SPADES</h3>
+      <p>The classic card game from the kitchen table and the break room, now on your phone. Bid smart, cover your partner, and run the table.</p>
+      <ul class="features">
+        <li>Classic partner Spades, easy to pick up</li>
+        <li>Big, easy-to-read cards</li>
+        <li>Earn coins and unlock new tables and card backs</li>
+        <li>Free to play, no account needed</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="game-art art-latch" aria-hidden="true">
+      <div class="clock">2:59 PM</div>
+      <div class="rug"></div>
+      <div class="mess m1"></div>
+      <div class="mess m2"></div>
+      <div class="mess m3"></div>
+      <div class="mess m4"></div>
+      <div class="kid"></div>
+      <div class="door"></div>
+    </div>
+    <div>
+      <span class="badge">IN DEVELOPMENT</span>
+      <h3>LATCHKEY</h3>
+      <p>School's out, the house key is on a string around your neck, and the place is a wreck. Get it spotless before Mom pulls into the driveway. A brand-new game for everyone who grew up a latchkey kid.</p>
+      <ul class="features">
+        <li>Race the clock to clean up the whole house</li>
+        <li>Top-down view with simple touch controls</li>
+        <li>Pure 70s and 80s latchkey-kid nostalgia</li>
+        <li>Made by Gen X, for Gen X</li>
+      </ul>
     </div>
   </div>
 </section>
